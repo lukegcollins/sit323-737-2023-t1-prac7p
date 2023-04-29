@@ -3,6 +3,7 @@ sit323-737-2023-t1-prac7p
 Two node.JS applications inside a docker image networked together.
 
 ## Installation Instructions
+Video Available Here: https://video.deakin.edu.au/media/t/1_kp01ychn  
 
 ### 1 - Setup and Start Kubernetes through Docker
 Once started, enable the web GUI and create an administrator user.

@@ -14,7 +14,15 @@ spec:
         app: app1
     spec:
       containers:
-        - name: app1
+        - name: docker-network-app1
           image: lgcollins/docker-network-app1:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          resources:
+            limits:
+              cpu: 500m
+              memory: 256Mi
+            requests:
+              cpu: 200m
+              memory: 128Mi

@@ -14,7 +14,15 @@ spec:
         app: app2
     spec:
       containers:
-        - name: app2
+        - name: docker-network-app2
           image: lgcollins/docker-network-app2:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 4000
+          resources:
+            limits:
+              cpu: 500m
+              memory: 256Mi
+            requests:
+              cpu: 200m
+              memory: 128Mi
