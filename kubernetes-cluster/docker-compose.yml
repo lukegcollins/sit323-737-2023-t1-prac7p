@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app1:
+    container_name: app1
+    build: ./app1
+    image: lgcollins/docker-network-app1
+    command: bash -c "npm install && npm start"
+    networks:
+      - my-docker-network
+    ports:
+      - 3000:3000
+  app2:
+    container_name: app2
+    build: ./app2
+    image: lgcollins/docker-network-app2
+    command: bash -c "npm install && npm start"
+    networks:
+      - my-docker-network
+    ports:
+      - 4000:4000
+    depends_on:
+      - app1
+
+networks:
+  my-docker-network:
+    driver: bridge
